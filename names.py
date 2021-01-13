@@ -1,22 +1,31 @@
+'''Generates names by randomly combining names from two seperate lists.'''
 import sys
 import random
 
-print('Welcome to The Office Name Picker!\n')
-print('Here is your name:')
 
-first = ('Michael', 'Dwight', 'Jim', 'Pam', 'Ryan', 'Andy', 'Robert')
-last = ('Scott', 'Schrute', 'Halpert', 'Beesly',
-        'Howard', 'Bernard', 'California')
+def main():
+    '''Selects names at random from two lists and combines them.'''
+    print('Welcome to The Office Name Picker!\n')
+    print('Here is your name:')
 
-while True:
-    firstname = random.choice(first)
-    lastname = random.choice(last)
+    first = ('Michael', 'Dwight', 'Jim', 'Pam', 'Ryan', 'Andy', 'Robert')
+    last = ('Scott', 'Schrute', 'Halpert', 'Beesly',
+            'Howard', 'Bernard', 'California')
 
-    print(firstname, lastname, file=sys.stderr)
+    while True:
+        firstname = random.choice(first)
+        lastname = random.choice(last)
 
-    try_again = input('\nTry Again? (Press Enter or x to quit)\n')
+        print(firstname, lastname, file=sys.stderr)
 
-    if try_again.lower() == 'x':
-        break
+        try_again = input(
+            '\nTry Again? (Press Enter or x (then enter) to quit)\n')
 
-input('\nPress Enter to confirm exit')
+        if try_again.lower() == 'x':
+            break
+
+    input('\nPress Enter to confirm exit')
+
+
+if __name__ == '__main__':
+    main()
